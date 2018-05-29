@@ -1,0 +1,17 @@
+Protocol proto;
+
+Procedure EnterLobby(lobby_id, stage_id) {
+    REQ EnterLobbyReq {
+        lobby_id: lobby_id,
+        stage_id: stage_id,
+    }
+    WAIT EnterLobbyRsp rsp;
+    IF (rsp.lobby_id > 0) {
+        REQ GetTeamInfoReq {
+        }
+    }
+    ELSE {
+        REQ GetLobbyData {
+        }
+    }
+}

@@ -1,0 +1,14 @@
+syntax="proto3";
+package test;
+
+message TestReq
+{
+    uint32 id = 1;
+    string name = 2;
+}
+
+message TestRsp
+{
+    uint32 id = 1;
+    uint32 name = 2;
+}
